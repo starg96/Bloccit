@@ -7,6 +7,18 @@ require 'faker'
 		body: Faker::Lorem.paragraph
 	)
 end
+
+if !Post.find_by(title: "Unique title here")
+	Post.create!(
+	title: "Unique title here",
+	body: "Unique body here"
+	)
+end
+
+
+
+
+
 posts = Post.all
 
 # Create Comments
@@ -15,6 +27,13 @@ posts = Post.all
 		post: posts.sample,
 		body: Faker::Lorem.paragraph
 	)
+end
+
+if !Comment.find_by(body: "Unique comment")
+	Comment.create!(
+		post: Post.all.sample,
+		body: "Unique comment"
+		)
 end
 
 puts "Seed finished"
