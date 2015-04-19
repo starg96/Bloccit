@@ -1,5 +1,11 @@
 Bloccit::Application.routes.draw do
-	resources :posts
+# get 'question/new'
+# get 'question/edit'
+# get 'question/index'
+# get 'question/show'
+
+
+	resources :question
 
 	get 'about' => 'welcome#about'
 
