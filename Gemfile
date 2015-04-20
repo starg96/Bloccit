@@ -15,6 +15,7 @@ gem 'bootstrap-sass'
 
 group :development do
 	gem 'sqlite3'
+	gem 'quiet_assets'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

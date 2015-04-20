@@ -1,4 +1,4 @@
-class QuestionController < ApplicationController
+class QuestionsController < ApplicationController
   def index
   	@quests = Question.all
   end
@@ -12,7 +12,7 @@ class QuestionController < ApplicationController
   end
 
   def create
-  	@quest = Question.new(params.requiire(:question).permit(:title, :body))
+  	@quest = Question.new(params.require(:question).permit(:title, :body, :resolved))
   	if @quest.save
   		flash[:notice] = "Question was saved."
   		redirect_to @quest
@@ -35,5 +35,18 @@ class QuestionController < ApplicationController
   		flash[:error] = "There was an error saving the question. Please try again."
   		render :edit
   	end
+  end
+
+
+  def destroy
+    @quest = Question.find(params[:id])
+
+    if @quest.delete
+      flash[:notice] = "Question was deleted."
+    else
+      flash[:error] = "There was an error deleting the question. Please try again."
+    end
+
+    redirect_to :index
   end
 end

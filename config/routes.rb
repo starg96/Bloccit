@@ -5,7 +5,7 @@ Bloccit::Application.routes.draw do
 # get 'question/show'
 
 
-	resources :question
+	resources :questions
 
 	get 'about' => 'welcome#about'
 

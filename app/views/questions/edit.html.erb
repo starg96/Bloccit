@@ -18,6 +18,11 @@
          <%= f.label :body %>
          <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter question body" %>
        </div>
+
+        <div class="form-group">
+         <%= f.label :Resolved? %>
+         <%= f.check_box :resolved, class: '' %>
+       </div>
        <div class="form-group">
          <%= f.submit "Save", class: 'btn btn-success' %>
        </div>
