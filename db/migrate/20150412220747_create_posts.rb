@@ -6,5 +6,11 @@ class CreatePosts < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    create_table :summaries do |t|
+    	t.belongs_to :post, index: true
+    	t.string :title
+    	t.timestamps null: false
+    end
   end
 end
