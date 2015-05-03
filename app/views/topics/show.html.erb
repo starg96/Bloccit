@@ -1,4 +1,4 @@
-<h1><%= markdown_to_html @topic.name %></h1>
+wwbs hehrdgxb<h1><%= markdown_to_html @topic.name %></h1>
 
 <% if policy(@topic).update? %>
 	<%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
@@ -14,8 +14,10 @@
             <%= link_to (markdown_to_html post.title), [@topic, post] %>
           </h4>
           <small>
-            submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br>
-            <%= post.comments.count %> Comments
+              <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
+              submitted <%= time_ago_in_words(post.created_at) %> ago by
+              <%= post.user.name %><br>
+              <%= post.comments.count %> Comments
           </small>
         </div>
       </div>
