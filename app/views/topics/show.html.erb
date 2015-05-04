@@ -22,6 +22,7 @@ wwbs hehrdgxb<h1><%= markdown_to_html @topic.name %></h1>
         </div>
       </div>
     <% end %>
+    <%= will_paginate @posts %>
   </div>
   <div class="col-md-4">
   	<% if policy(Post.new).create? %>
