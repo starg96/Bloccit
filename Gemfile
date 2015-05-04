@@ -31,6 +31,7 @@ gem 'jquery-rails'
 gem 'faker'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'devise'
+gem 'will_paginate', '~> 3.0.5'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
