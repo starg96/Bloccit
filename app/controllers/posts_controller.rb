@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.paginate(page: params[:page], per_page: 100)
     authorize @posts
   end
 
