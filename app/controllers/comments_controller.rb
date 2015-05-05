@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def create
     @comment =	Comment.new(post_id: params[:post_id], body: params[:comment][:body], user: current_user )
     @post = @comment.post
+    authorize @comment
     # We want a comment attached to a post and a user when we are done here.
     # @comment = current_user.comments.build(params.require(:comment).permit(:title, :body))
 
