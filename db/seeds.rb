@@ -43,18 +43,18 @@ posts = Post.all
 # Create Comments
 100.times do
 	Comment.create!(
-	#   user: users.sample,    #we have not yet associated Users with comments
+	    user: users.sample,    
 		post: posts.sample,
 		body: Faker::Lorem.paragraph
 	)
 end
 
-# user = User.first
-# user.skip_reconfirmation!
-# user.update_attributes!(
-# 	email:  'Starg96@gmail.com',
-# 	password:  'helloworld'
-# 	)
+user = User.first
+user.skip_reconfirmation!
+user.update_attributes!(
+	email:  'Starg96@gmail.com',
+	password:  'helloworld'
+	)
 
 admin = User.new(
 	name: 		'Admin User',
