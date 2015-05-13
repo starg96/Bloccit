@@ -14,7 +14,9 @@ gem 'pry-rails', :group => :development
 gem 'bootstrap-sass'
 
 group :development do
+  gem 'quiet_assets'
 	gem 'sqlite3'
+  gem 'pry'
 end
 
 group :development, :test do
