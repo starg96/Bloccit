@@ -7,7 +7,7 @@ describe FavoritesController do
 
 	before do
 		@post = authenticated_post
-		@user = Authenticated_user
+		@user = authenticated_user
 		sign_in @user
 	end
 

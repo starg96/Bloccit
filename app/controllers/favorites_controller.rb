@@ -16,7 +16,7 @@ class FavoritesController < ApplicationController
 
 	def destroy
 		@post = Post.find(params[:post_id])
-		@favorite = current_user.favorites.build(post: @post)
+		@favorite = current_user.favorites.find(params[:id])
 		authorize @favorite
 		
 		if @favorite.destroy
