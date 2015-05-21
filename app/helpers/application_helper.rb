@@ -13,4 +13,17 @@ module ApplicationHelper
 		redcarpet = Redcarpet::Markdown.new(renderer, extensions)
 		(redcarpet.render markdown).html_safe
 	end
+
+	def up_vote_link_classes(post)
+		link_to " ", post_up_vote_path(post),
+        class: "glyphicon glyphicon-chevron-up #{(current_user.voted(post)
+        && current_user.voted(post).up_vote?) ? 'voted' : '' }", method: :post
+	end
+
+	def down_vote_link_classes(post)
+		link_to " ", post_down_vote_path(post),
+        class: "glyphicon glyphicon-chevron-down #{(current_user.voted(post)
+        && current_user.voted(post).down_vote?) ? 'voted' : '' }", method: :post
+	end
+
 end
