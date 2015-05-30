@@ -15,6 +15,9 @@ gem 'bootstrap-sass'
 
 gem 'newrelic_rpm'
 
+gem 'puma', group: :production
+gem 'puma', group: :development
+
 group :development do
   gem 'quiet_assets'
 	gem 'sqlite3'
