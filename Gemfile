@@ -13,6 +13,8 @@ gem 'pry-rails', :group => :development
 
 gem 'bootstrap-sass'
 
+gem 'newrelic_rpm'
+
 group :development do
   gem 'quiet_assets'
 	gem 'sqlite3'
