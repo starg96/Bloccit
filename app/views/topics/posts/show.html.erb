@@ -15,15 +15,14 @@
   <!-- We want to render all of the comments -->
 <div class="row">
   <h3> Comments </h3>
-    <ol>
+    <div class='js-comments'>
       <%= render partial: "comments/comment", collection: @comments %>
-    </ol>
+    </div>
 </div>
   <!-- We want to render a form for creating new comments (WOOHOO) -->
-
-    <% if policy(@comment).create? %>
-    <p><%= render partial: "comments/form", locals: {topic: @post.topic, post: @post, user: current_user} %></p>
-    <% end %>
+  <div class='new-comment'>
+    <%= render 'comments/form' %>
+  </div>
 
   <div class="col-md-4">
     <% if policy(@post).edit? %>
