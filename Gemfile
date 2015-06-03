@@ -21,12 +21,13 @@ gem 'puma', group: :development
 group :development do
   gem 'quiet_assets'
 	gem 'sqlite3'
-  gem 'pry'
 end
 
 group :development, :test do
 	gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
+  gem 'pry'
+  
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

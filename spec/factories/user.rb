@@ -7,17 +7,22 @@ FactoryGirl.define do
 		confirmed_at Time.now
 
 		factory :user_with_post_and_comment do
-			title "Post Title"
-			body "Post bodies must be pretty long."
-			user
-			topic { Topic.create(name: 'Topic name') }
+		
+			# user
+			# topic { Topic.create(name: 'Topic name') }
 
-			body "This is a new comment."
-			user
-			post
+			# comments {Comment.create(body: "This is a new comment.")}
+			# posts { Post.create(	title: "Post Title",
+			# body: "Post bodies must be pretty long.")}
 
-			after(:build) do |comment|
-				comment.class.skip_callback(:create, :after, :send_favorite_emails)
+			# after(:build) do |comment|
+			# 	comment.class.skip_callback(:create, :after, :send_favorite_emails)
+			# end
+
+			after(:create) do |user|
+				post = Post.create(title: "Post Title", body: "Post bodies must be pretty long.", topic: Topic.create, user: user)
+
+				Comment.create(body: "This is a new comment.", user: user, post: post)
 			end
 		end
 	end
